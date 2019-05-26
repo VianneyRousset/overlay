@@ -1,0 +1,13 @@
+diff --git a/m4/ax_blas.m4 b/m4/ax_blas.m4
+index 14eba7c..d7cdd08 100644
+--- a/m4/ax_blas.m4
++++ b/m4/ax_blas.m4
+@@ -111,6 +111,8 @@ fi
+ if test $ax_blas_ok = no; then
+ 	AC_CHECK_LIB(openblas, $sgemm, [ax_blas_ok=yes
+ 			                BLAS_LIBS="-lopenblas"])
++	AC_CHECK_LIB(openblas_threads, $sgemm, [ax_blas_ok=yes
++			                BLAS_LIBS="-lopenblas_threads"])
+ fi
+ 
+ # BLAS in ATLAS library? (http://math-atlas.sourceforge.net/)

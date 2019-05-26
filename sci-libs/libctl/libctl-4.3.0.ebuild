@@ -1,14 +1,14 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=4
 
-inherit fortran-2 autotools-utils git-r3
+#inherit fortran-2 autotools-utils
+inherit autotools
 
 DESCRIPTION="Guile-based library for scientific simulations"
 HOMEPAGE="http://ab-initio.mit.edu/libctl/"
-SRC_URI=""
-EGIT_REPO_URI="https://github.com/stevengj/libctl.git"
+SRC_URI="https://github.com/NanoComp/libctl/releases/download/v${PV}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -20,24 +20,3 @@ DEPEND="
 	sci-libs/nlopt"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	default
-	if ! use static-libs
-	then
-		sed -i '/^AM_ENABLE_SHARED/d' configure.ac
-	fi
-	eautoreconf
-}
-
-src_configure() {
-	default
-	econf
-}
-
-src_compile() {
-	make
-}
-
-src_install() {
-	emake DESTDIR="${D}" install
-}
