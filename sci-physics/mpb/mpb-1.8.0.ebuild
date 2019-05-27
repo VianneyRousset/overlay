@@ -17,17 +17,14 @@ IUSE='mpi hdf5 readline guile'
 DEPEND='
 	>=virtual/blas-3.6
 	virtual/lapack
-	>=sci-libs/fftw-3.3.6_p2
-	>=sci-libs/libctl-3.2
-	dev-scheme/guile
-	mpi? ( virtual/mpi )
 	hdf5? ( sci-libs/hdf5 )
+	>=sci-libs/fftw-3.3.6_p2
+	dev-scheme/guile
+	>=sci-libs/libctl-3.2
 	readline? ( sys-libs/readline )
-	sci-libs/gsl:=
-	sci-physics/harminv
-	hdf5? ( sci-libs/hdf5:= )
-	mpi? ( virtual/mpi )
 	'
+	# sci-libs/gsl:=
+	# sci-physics/harminv
 
 RDEPEND="${DEPEND}"
 
@@ -39,7 +36,7 @@ PATCHES=(
 src_configure() {
 	eautoreconf
     econf \
-        $(use_with mpi) \
+        $(use_with hdf5) \
         $(use_with hdf5)
 }
 
