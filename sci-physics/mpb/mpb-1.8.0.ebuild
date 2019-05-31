@@ -37,6 +37,7 @@ src_configure() {
 	eautoreconf
     econf \
         $(use_with hdf5) \
-        $(use_with hdf5)
+        $(use_with guile) \
+		--enable-shared
 }
 

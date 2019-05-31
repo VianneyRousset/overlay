@@ -20,3 +20,7 @@ DEPEND="
 	sci-libs/nlopt"
 RDEPEND="${DEPEND}"
 
+src_configure() {
+	eautoreconf
+	econf --enable-shared
+}
