@@ -19,6 +19,7 @@ DEPEND='
 	virtual/lapack
 	sci-physics/harminv
 	mpi? ( virtual/mpi )
+	mpi? ( dev-python/mpi4py )
 	hdf5? ( sci-libs/hdf5 )
 	dev-scheme/guile
 	sci-physics/mpb
