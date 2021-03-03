@@ -235,10 +235,10 @@ src_install() {
 	cmake_src_install
 
 	if ! use headless; then
-		dosym ../$(get_libdir)/${PN}/bin/FreeCAD /usr/bin/freecad
+		dosym ../$(get_libdir)/${PN}/bin/FreeCAD /usr/bin/freecad-realthunder
 		mv "${ED}"/usr/$(get_libdir)/freecad/share/* "${ED}"/usr/share || die "failed to move shared ressources"
 	fi
-	dosym ../$(get_libdir)/${PN}/bin/FreeCADCmd /usr/bin/freecadcmd
+	dosym ../$(get_libdir)/${PN}/bin/FreeCADCmd /usr/bin/freecadcmd-realthunder
 
 	python_optimize "${ED}"/usr/share/${PN}/data/Mod/ "${ED}"/usr/$(get_libdir)/${PN}{/Ext,/Mod}/
 }
