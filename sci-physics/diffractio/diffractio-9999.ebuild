@@ -26,6 +26,7 @@ dev-python/pillow
 dev-python/numexpr
 dev-python/pandas
 dev-python/psutil
+sci-physics/py_pol
 dev-python/ipywidgets
 dev-python/ipython
 "
