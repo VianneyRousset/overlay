@@ -7,7 +7,7 @@ inherit autotools flag-o-matic
 
 DESCRIPTION='Computation of photonic band structures in periodic media'
 HOMEPAGE="https://github.com/NanoComp/${PN}"
-SRC_URI="${HOMEPAGE}/releases/v${PV}/${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/releases/download/v${PV}/${P}.tar.gz"
 
 LICENSE='GPL-2'
 SLOT='0'
