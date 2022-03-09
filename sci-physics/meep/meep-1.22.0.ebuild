@@ -40,13 +40,3 @@ RDEPEND="
 "
 
 DEPEND="${RDEPEND}"
-
-src_prepare() {
-	default
-	eautoreconf
-}
-
-src_configure() {
-	econf --enable-maintainer-mode
-}
-
